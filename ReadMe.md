@@ -34,7 +34,7 @@ Before you can run the application, ensure you have the following installed:
 
    ```
 
-## Running the Application
+2. ## Running the Application
 
 ```bash
 nodemon app.js
