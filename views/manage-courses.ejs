@@ -1,0 +1,37 @@
+<h1>Manage Courses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Course ID</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Lecturer ID</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% courses.forEach(course => { %>
+      <tr>
+        <td><%= course.id %></td>
+        <td><%= course.title %></td>
+        <td><%= course.description %></td>
+        <td><%= course.lecturer_id %></td>
+        <td>
+          <button onclick="location.href='/edit-course/<%= course.id %>'">Edit</button>
+          <form action="/delete-course/<%= course.id %>" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<form action="/add-course" method="POST">
+  <h2>Add New Course</h2>
+  <label>Title:</label> <input type="text" name="title" required />
+  <label>Description:</label> <input type="text" name="description" required />
+  <label>Lecturer ID:</label> <input type="number" name="lecturer_id" required />
+  <button type="submit">Add Course</button>
+</form>

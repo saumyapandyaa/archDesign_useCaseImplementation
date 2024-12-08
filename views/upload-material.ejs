@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Materials</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Uploaded Materials</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>File Name</th>
+                    <th>Size</th>
+                    <th>Uploaded By</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% files.forEach((file) => { %>
+                    <tr>
+                        <td><%= file.id %></td>
+                        <td><%= file.name %></td>
+                        <td><%= file.size %></td>
+                        <td><%= file.uploadedBy %></td>
+                        <td><%= file.date %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <a href="/dashboard" class="btn">Back to Dashboard</a>
+    </div>
+</body>
+</html>
